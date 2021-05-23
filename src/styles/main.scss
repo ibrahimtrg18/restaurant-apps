@@ -129,9 +129,15 @@ header {
   }
 }
 
+.hero {
+  display: inline-flex;
+}
+
+main {
+  padding: 8px 16px;
+}
+
 footer {
-  position: fixed;
-  bottom: 0;
   display: block;
   padding: 8px 16px;
   background-color: $grayColor;
