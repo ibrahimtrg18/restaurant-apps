@@ -1,9 +1,142 @@
-$body-color: red;
+@import './variable.scss';
+@import './mixin.scss';
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: $body-color;
+  font-family: 'Nunito', sans-serif;
+  background-color: $bodyColor;
+  font-size: $textFontSize;
+  color: $textColor;
 }
 
 img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 8px 16px;
+
+  nav.drawer {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: block;
+    min-width: 150px;
+    width: 40%;
+    max-width: 300px;
+    height: $heightSidebar;
+    background-color: #ffffff;
+    padding: 8px 0;
+    font-weight: 600;
+
+    opacity: 0;
+    visibility: hidden;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include mQ($minMobile) {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: block;
+        padding: 8px 16px;
+
+        a {
+          font-size: $menuFontSizeMobile;
+          text-decoration: none;
+          color: $textColor;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .logo {
+    font-size: $logoFontSize;
+    font-weight: 800;
+  }
+
+  .hamburger {
+    display: grid;
+    place-items: center;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 20px;
+      height: 3px;
+      background-color: $textColor;
+    }
+
+    @include mQ($minMobile) {
+      display: none;
+    }
+  }
+
+  nav.navbar {
+    display: none;
+
+    @include mQ($minMobile) {
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        margin-left: 16px;
+
+        a {
+          font-size: $menuFontSizeMobile;
+          text-decoration: none;
+          color: $textColor;
+          font-weight: 600;
+
+          @include mQ($minMobile) {
+            font-size: $menuFontSizeTablet;
+          }
+          @include mQ($minTablet) {
+            font-size: $menuFontSizeDesktop;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
   display: block;
+  padding: 8px 16px;
+  background-color: $grayColor;
+  width: 100%;
+  color: $lightWhiteColor;
+  font-weight: 300;
+  font-size: $fontSm;
 }

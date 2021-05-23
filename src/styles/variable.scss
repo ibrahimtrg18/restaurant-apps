@@ -1,0 +1,54 @@
+$primaryColor: #7868e6;
+$secondaryColor: #ff880a;
+$tertiaryColor: #a10eb5;
+
+$textColor: #242424;
+$bodyColor: #f0f0f0;
+$textSpanColor: #4d4d4d;
+
+// colors
+// ------------
+$whiteColor: #ffffff;
+$lightWhiteColor: darken($whiteColor, 20%);
+$blackColor: #000000;
+$grayColor: lighten($blackColor, 20%);
+// ------------
+
+$minDesktop: 960px;
+$minTablet: 720px;
+$minMobile: 480px;
+
+$navbarHeight: 56px;
+$heightSidebar: calc(100vh - $navbarHeight);
+
+// typography
+// ------------
+$logoFontSize: 24px;
+$menuFontSize: 20px;
+$headerFontSize: 24px;
+$textFontSize: 16px;
+$fontXs: 12px;
+$fontSm: 14px;
+$fontMd: 16px;
+$fontLg: 18px;
+$fontXl: 20px;
+// ------------
+
+// fonts
+// ------------
+$logoFontSizeDesktop: 24px;
+$logoFontSizeTablet: 22px;
+$logoFontSizeMobile: 20px;
+
+$menuFontSizeDesktop: 20px;
+$menuFontSizeTablet: 18px;
+$menuFontSizeMobile: 16px;
+
+$headerFontSizeDesktop: 24px;
+$headerFontSizeTablet: 20px;
+$headerFontSizeMobile: 16px;
+
+$textFontSizeDesktop: 16px;
+$textFontSizeTablet: 13px;
+$textFontSizeMobile: 11px;
+// ------------

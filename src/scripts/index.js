@@ -7,4 +7,11 @@ const main = async () => {
   console.log(restaurants);
 };
 
+const drawer = document.getElementById('drawer');
+const hamburger = document.getElementById('hamburger');
+
+hamburger.addEventListener('click', () => {
+  drawer.classList.toggle('show');
+});
+
 main();
