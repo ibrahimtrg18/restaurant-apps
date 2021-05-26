@@ -181,6 +181,20 @@ header {
   }
 }
 
+.skip-link {
+  background: $primaryColor;
+  color: $whiteColor;
+  font-weight: 700;
+  top: -100%;
+  left: 50%;
+  padding: 4px;
+  position: absolute;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 main {
   padding: 0 16px;
 

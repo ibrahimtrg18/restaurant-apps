@@ -11,6 +11,7 @@ class RestaurantItem extends HTMLElement {
           <img
             class="restaurant-item__image"
             src="${this._restaurant.pictureId}"
+            alt="${this._restaurant.name} image"
           />
           <div class="restaurant-item__location">${this._restaurant.city}</div>
         </div>
