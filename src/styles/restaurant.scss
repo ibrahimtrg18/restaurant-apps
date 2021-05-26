@@ -26,41 +26,51 @@ restaurant-list {
     box-shadow: $cardBoxShadow;
     overflow: hidden;
 
-    .restaurant-item__image {
-      width: 100%;
-      height: auto;
-      min-height: 200px;
-      max-height: 200px;
-      object-fit: cover;
+    .restaurant-item__head {
+      position: relative;
+      .restaurant-item__image {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        max-height: 200px;
+        object-fit: cover;
+      }
+
+      .restaurant-item__location {
+        position: absolute;
+        top: 16px;
+        right: 0;
+        padding: 4px 8px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        font-size: $smFont;
+        background-color: $whiteColor;
+        color: $secondaryColor;
+        font-weight: 600;
+
+        @include mQ($minMobile) {
+          font-size: $mdFont;
+        }
+
+        @include mQ($minTablet) {
+          font-size: $lgFont;
+        }
+
+        @include mQ($minDesktop) {
+          font-size: $mdFont;
+        }
+      }
     }
 
-    .restaurant-item__location {
-      position: absolute;
-      top: 16px;
-      right: 0;
-      padding: 4px 8px;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      font-size: $smFont;
-      background-color: $whiteColor;
-      color: $secondaryColor;
-      font-weight: 600;
-
-      @include mQ($minMobile) {
-        font-size: $mdFont;
-      }
-
-      @include mQ($minTablet) {
-        font-size: $lgFont;
-      }
-
-      @include mQ($minDesktop) {
-        font-size: $mdFont;
-      }
-    }
-
-    .restaurant-item__info {
+    .restaurant-item__body {
+      position: relative;
       padding: 8px 16px 16px;
+
+      .restaurant-item__rating {
+        font-size: $xsFont;
+        font-weight: 300;
+        color: $grayColor;
+      }
 
       .info__name {
         margin-bottom: 8px;
