@@ -1,5 +1,6 @@
 @import './variable.scss';
 @import './mixin.scss';
+@import './font.scss';
 
 *,
 *:after,
@@ -10,15 +11,29 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
   background-color: $bodyColor;
   font-size: $textFontSize;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
   color: $textColor;
 }
 
 img {
   width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: $primaryColor;
+
+  &:hover {
+    color: darken($primaryColor, 20%);
+  }
+}
+
+.of__hidden {
+  overflow: hidden;
 }
 
 header {
@@ -31,18 +46,20 @@ header {
   padding: 8px 16px;
 
   nav.drawer {
-    display: block;
+    z-index: 100;
     position: absolute;
     top: 100%;
     right: 0;
     display: block;
     min-width: 150px;
-    width: 40%;
+    width: 100%;
     max-width: 300px;
     height: $heightSidebar;
     background-color: #ffffff;
     padding: 8px 0;
     font-weight: 600;
+    overflow-y: auto;
+    transition: all 0.2s ease-in;
 
     opacity: 0;
     visibility: hidden;
@@ -54,6 +71,7 @@ header {
 
     @include mQ($minMobile) {
       display: none;
+      width: 40%;
     }
 
     ul {
@@ -130,19 +148,55 @@ header {
 }
 
 .hero {
-  display: inline-flex;
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 400px;
+  background-image: url('/images/heros/hero-image_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .hero__inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $whiteColor;
+
+    .hero-inner__title {
+    }
+    .hero-inner__tagline {
+    }
+  }
 }
 
 main {
-  padding: 8px 16px;
+  padding: 0 16px;
+
+  @include mQ($maxDesktop) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content {
+    padding: 16px 0;
+    .content__title {
+      display: block;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+  }
 }
 
 footer {
   display: block;
   padding: 8px 16px;
-  background-color: $grayColor;
+  background-color: $whiteColor;
   width: 100%;
-  color: $lightWhiteColor;
+  color: $grayColor;
   font-weight: 300;
-  font-size: $fontSm;
+  font-size: $smFont;
 }

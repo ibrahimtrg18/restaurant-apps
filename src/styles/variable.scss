@@ -1,5 +1,5 @@
 $primaryColor: #7868e6;
-$secondaryColor: #ff880a;
+$secondaryColor: #ff8400;
 $tertiaryColor: #a10eb5;
 
 $textColor: #242424;
@@ -14,12 +14,13 @@ $blackColor: #000000;
 $grayColor: lighten($blackColor, 20%);
 // ------------
 
+$maxDesktop: 1200px;
 $minDesktop: 960px;
 $minTablet: 720px;
 $minMobile: 480px;
 
 $navbarHeight: 56px;
-$heightSidebar: calc(100vh - $navbarHeight);
+$heightSidebar: calc(100vh - #{$navbarHeight});
 
 // typography
 // ------------
@@ -27,11 +28,11 @@ $logoFontSize: 24px;
 $menuFontSize: 20px;
 $headerFontSize: 24px;
 $textFontSize: 16px;
-$fontXs: 12px;
-$fontSm: 14px;
-$fontMd: 16px;
-$fontLg: 18px;
-$fontXl: 20px;
+$xsFont: 12px;
+$smFont: 14px;
+$mdFont: 16px;
+$lgFont: 18px;
+$xlFont: 20px;
 // ------------
 
 // fonts
@@ -52,3 +53,7 @@ $textFontSizeDesktop: 16px;
 $textFontSizeTablet: 13px;
 $textFontSizeMobile: 11px;
 // ------------
+
+// components
+// ------------
+$cardBoxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
