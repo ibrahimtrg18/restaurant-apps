@@ -79,13 +79,18 @@ header {
 
       li {
         display: block;
-        padding: 8px 16px;
 
         a {
+          display: block;
           font-size: $menuFontSizeMobile;
           text-decoration: none;
           color: $textColor;
           font-weight: 600;
+          padding: 8px 16px;
+
+          &:hover {
+            color: $primaryColor;
+          }
         }
       }
     }
@@ -134,6 +139,10 @@ header {
           text-decoration: none;
           color: $textColor;
           font-weight: 600;
+
+          &:hover {
+            color: $primaryColor;
+          }
 
           @include mQ($minMobile) {
             font-size: $menuFontSizeTablet;
