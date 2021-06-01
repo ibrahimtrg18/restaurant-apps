@@ -24,6 +24,7 @@ img {
 }
 
 a {
+  display: block;
   text-decoration: none;
   color: $primaryColor;
 
@@ -107,6 +108,7 @@ header {
     height: 20px;
     width: 20px;
     cursor: pointer;
+    border: transparent;
 
     span {
       display: block;
@@ -128,17 +130,22 @@ header {
     }
 
     ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       list-style: none;
 
       li {
-        display: inline-block;
-        margin-left: 16px;
+        // display: inline-block;
+        // margin-left: 16px;
+        // padding: 0 16px;
 
         a {
           font-size: $menuFontSizeMobile;
           text-decoration: none;
           color: $textColor;
           font-weight: 600;
+          padding: 10px 16px;
 
           &:hover {
             color: $primaryColor;

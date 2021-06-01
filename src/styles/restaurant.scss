@@ -73,7 +73,9 @@ restaurant-list {
       }
 
       .info__name {
-        margin-bottom: 8px;
+        & a {
+          padding: 8px 0;
+        }
       }
 
       .info__description {
