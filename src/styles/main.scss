@@ -38,31 +38,39 @@ a {
 }
 
 header {
-  position: relative;
-  background-color: #ffffff;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
+  width: 100%;
+  height: $navbarHeight;
   align-items: center;
   justify-content: space-between;
-  height: 56px;
+  background-color: #ffffff;
   padding: 8px 16px;
 
   .logo {
     font-size: $logoFontSize;
     font-weight: 800;
+    white-space: nowrap;
   }
 
   .hamburger {
     display: grid;
     place-items: center;
-    height: 20px;
-    width: 20px;
+    height: 48px;
+    width: 48px;
     cursor: pointer;
     border: transparent;
+    background-color: transparent;
+    padding: 16px 10px;
 
     span {
       display: block;
       width: 20px;
-      height: 3px;
+      height: 2px;
       background-color: $textColor;
     }
 
@@ -73,8 +81,9 @@ header {
 
   nav.drawer {
     z-index: 100;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: $navbarHeight;
+    bottom: 0;
     right: 0;
     display: block;
     min-width: 150px;
@@ -145,7 +154,8 @@ header {
           text-decoration: none;
           color: $textColor;
           font-weight: 600;
-          padding: 10px 16px;
+          padding: 10px 8px;
+          white-space: nowrap;
 
           &:hover {
             color: $primaryColor;
@@ -153,9 +163,11 @@ header {
 
           @include mQ($minMobile) {
             font-size: $menuFontSizeTablet;
+            padding: 10px 12px;
           }
           @include mQ($minTablet) {
             font-size: $menuFontSizeDesktop;
+            padding: 10px 16px;
           }
         }
       }
