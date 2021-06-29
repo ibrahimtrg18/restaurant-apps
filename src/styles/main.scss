@@ -84,7 +84,7 @@ header {
     position: fixed;
     top: $navbarHeight;
     bottom: 0;
-    right: 0;
+    right: -100%;
     display: block;
     min-width: 150px;
     width: 100%;
@@ -96,12 +96,8 @@ header {
     overflow-y: auto;
     transition: all 0.2s ease-in;
 
-    opacity: 0;
-    visibility: hidden;
-
-    &.show {
-      opacity: 1;
-      visibility: visible;
+    &.open {
+      right: 0;
     }
 
     @include mQ($minMobile) {
@@ -175,31 +171,6 @@ header {
   }
 }
 
-.hero {
-  position: relative;
-  display: block;
-  width: 100%;
-  min-height: 400px;
-  background-image: url('/images/heros/hero-image_2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .hero__inner {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: $whiteColor;
-
-    .hero-inner__title {
-    }
-    .hero-inner__tagline {
-    }
-  }
-}
-
 .skip-link {
   background: $primaryColor;
   color: $whiteColor;
@@ -215,15 +186,40 @@ header {
 }
 
 main {
-  padding: 0 16px;
+  padding-top: $navbarHeight;
 
-  @include mQ($maxDesktop) {
-    max-width: 1200px;
-    margin: 0 auto;
+  .hero {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 400px;
+    background-image: url('/images/heros/hero-image_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .hero__inner {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: $whiteColor;
+
+      .hero-inner__title {
+      }
+      .hero-inner__tagline {
+      }
+    }
   }
 
   .content {
-    padding: 16px 0;
+    padding: 16px 16px;
+
+    @include mQ($maxDesktop) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .content__title {
       display: block;
       font-weight: 700;

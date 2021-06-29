@@ -3,23 +3,25 @@ import '../styles/main.scss';
 import '../styles/restaurant.scss';
 import './components/restaurant-list';
 import { getRestaurants } from './utils/getRestaurants';
+import App from './app';
 
-const drawer = document.getElementById('drawer');
-const hamburger = document.getElementById('hamburger');
 const restaurants = document.getElementById('restaurants');
 const restaurantListElement = document.createElement('restaurant-list');
 
-hamburger.addEventListener('click', () => {
-  drawer.classList.toggle('show');
-  document.body.classList.toggle('of__hidden');
-});
-
 const main = async () => {
+
   const res = await getRestaurants();
 
   restaurantListElement.restaurants = res.restaurants;
 
   restaurants.appendChild(restaurantListElement);
+
 };
 
 main();
+
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('#maincontent'),
+})
