@@ -1,7 +1,7 @@
 @import './variable.scss';
 @import './mixin.scss';
 
-restaurant-list {
+.content__restaurants {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px 0;
