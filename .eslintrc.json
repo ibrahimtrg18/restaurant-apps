@@ -17,6 +17,9 @@
         "endOfLine": "auto"
       }
     ],
-    "no-underscore-dangle": "off"
+    "no-unused-vars": "warn",
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-restricted-globals": "off"
   }
 }

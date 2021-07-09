@@ -1,4 +1,4 @@
-import RestaurantSource from '../../data/restuarant-source';
+import RestaurantSource from '../../data/restaurant-source';
 import RestaurantItem from '../templates/restaurant-item';
 
 const Home = {
