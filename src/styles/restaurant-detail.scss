@@ -1,0 +1,201 @@
+@import './variable.scss';
+@import './mixin.scss';
+
+.restaurant-detail {
+  position: relative;
+
+  .restaurant-detail__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    @include mQ($minMobile) {
+      height: 300px;
+    }
+
+    @include mQ($minTablet) {
+      height: 400px;
+    }
+
+    @include mQ($minDesktop) {
+      height: 500px;
+    }
+  }
+
+  .restaurant-detail__location {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    padding: 4px 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: $smFont;
+    background-color: $whiteColor;
+    color: $secondaryColor;
+    font-weight: 600;
+
+    @include mQ($minMobile) {
+      font-size: $mdFont;
+    }
+
+    @include mQ($minTablet) {
+      font-size: $lgFont;
+    }
+
+    @include mQ($minDesktop) {
+      font-size: $mdFont;
+    }
+  }
+
+  .restaurant-detail__info {
+    position: relative;
+    display: block;
+    padding: 4px 8px;
+    margin-bottom: 16px;
+    background-color: $whiteColor;
+
+    @include mQ($minMobile) {
+      padding: 8px 16px;
+    }
+
+    @include mQ($minTablet) {
+      padding: 12px 24px;
+    }
+
+    @include mQ($minDesktop) {
+      padding: 16px 32px;
+    }
+
+    @include mQ($maxDesktop) {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .restaurant-detail__info-name {
+      color: $primaryColor;
+    }
+
+    .restaurant-detail__info-address {
+      font-size: $smFont;
+      font-weight: 300;
+      color: $grayColor;
+    }
+
+    .restaurant-detail__rating {
+      font-size: $xsFont;
+      font-weight: 300;
+      color: $grayColor;
+    }
+
+    .restaurant-detail__info-description {
+    }
+  }
+
+  .restaurant-detail__menu {
+    position: relative;
+    display: block;
+    padding: 4px 8px;
+    margin-bottom: 16px;
+    background-color: $whiteColor;
+
+    @include mQ($minMobile) {
+      padding: 8px 16px;
+    }
+
+    @include mQ($minTablet) {
+      padding: 12px 24px;
+    }
+
+    @include mQ($minDesktop) {
+      padding: 16px 32px;
+    }
+
+    @include mQ($maxDesktop) {
+      max-width: $maxDesktop;
+      margin: 0 auto;
+    }
+
+    .restaurant-detail-menu__menu {
+      display: flex;
+
+      & > ul {
+        list-style: none;
+        flex: 1;
+
+        li {
+          font-size: $smFont;
+        }
+      }
+
+      & > ul:first-child {
+        padding-right: 4px;
+
+        h3 {
+          color: $secondaryColor;
+        }
+      }
+
+      & > ul:last-child {
+        padding-left: 4px;
+
+        h3 {
+          color: $tertiaryColor;
+        }
+      }
+    }
+  }
+
+  .restaurant-detail__review {
+    position: relative;
+    display: block;
+    padding: 4px 8px;
+    margin-bottom: 16px;
+    background-color: $whiteColor;
+
+    .restaurant-detail__review-list {
+      width: 100%;
+
+      .restaurant-detail__review-item {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+
+        .restaurant-detail__review-item__head {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          margin-bottom: 8px;
+
+          & > h4 {
+            flex: 1;
+          }
+
+          & > span {
+            font-size: $xsFont;
+            font-weight: 300;
+          }
+        }
+
+        .restaurant-detail__review-item__body {
+          width: 100%;
+
+          & > p {
+            word-break: break-all;
+            font-size: $smFont;
+          }
+        }
+      }
+    }
+  }
+}
+
+.like-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: $primaryColor;
+  color: $whiteColor;
+}

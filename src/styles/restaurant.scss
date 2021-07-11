@@ -72,13 +72,13 @@
         color: $grayColor;
       }
 
-      .info__name {
+      .restaurant-item__info-name {
         & a {
           padding: 8px 0;
         }
       }
 
-      .info__description {
+      .restaurant-item__info-description {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
