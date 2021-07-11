@@ -70,4 +70,14 @@ const RestaurantDetail = (restaurant) => `
         </div>
     </div>`;
 
+export const RestaurantDetailLikeButton = () => `
+    <button aria-label="like this restaurant" id="likeButton" class="like">
+        <img src="/icons/like.svg"></img>
+    </button>`;
+
+export const RestaurantDetailLikedButton = () => `
+    <button aria-label="unlike this restaurant" id="likeButton" class="like">
+        <img src="/icons/liked.svg"></img>
+    </button>`;
+
 export default RestaurantDetail;

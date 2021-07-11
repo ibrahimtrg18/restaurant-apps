@@ -198,4 +198,15 @@
   border-radius: 4px;
   background-color: $primaryColor;
   color: $whiteColor;
+  cursor: pointer;
+
+  & > button {
+    border: transparent;
+  }
+
+  & img {
+    display: flex;
+    background-color: $primaryColor;
+    cursor: pointer;
+  }
 }

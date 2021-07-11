@@ -185,6 +185,10 @@ header {
   top: 0;
 }
 
+#maincontent {
+  min-height: calc(100vh - 35px);
+}
+
 main {
   padding-top: $navbarHeight;
 
