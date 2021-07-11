@@ -53,6 +53,8 @@
     padding: 4px 8px;
     margin-bottom: 16px;
     background-color: $whiteColor;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
 
     @include mQ($minMobile) {
       padding: 8px 16px;
@@ -68,7 +70,7 @@
 
     @include mQ($maxDesktop) {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 16px;
     }
 
     .restaurant-detail__info-name {
@@ -97,6 +99,8 @@
     padding: 4px 8px;
     margin-bottom: 16px;
     background-color: $whiteColor;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
 
     @include mQ($minMobile) {
       padding: 8px 16px;
@@ -112,7 +116,7 @@
 
     @include mQ($maxDesktop) {
       max-width: $maxDesktop;
-      margin: 0 auto;
+      margin: 0 auto 16px;
     }
 
     .restaurant-detail-menu__menu {
@@ -151,23 +155,46 @@
     padding: 4px 8px;
     margin-bottom: 16px;
     background-color: $whiteColor;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
+
+    @include mQ($minMobile) {
+      padding: 8px 16px;
+    }
+
+    @include mQ($minTablet) {
+      padding: 12px 24px;
+    }
+
+    @include mQ($minDesktop) {
+      padding: 16px 32px;
+    }
+
+    @include mQ($maxDesktop) {
+      max-width: $maxDesktop;
+      margin: 0 auto 16px;
+    }
 
     .restaurant-detail__review-list {
       width: 100%;
+      margin-top: 8px;
 
       .restaurant-detail__review-item {
         display: block;
         width: 100%;
+        padding: 6px 10px;
         margin-bottom: 8px;
+        border-radius: 4px;
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 
         .restaurant-detail__review-item__head {
           display: flex;
           width: 100%;
           align-items: center;
-          margin-bottom: 8px;
 
           & > h4 {
             flex: 1;
+            text-transform: capitalize;
           }
 
           & > span {
