@@ -72,12 +72,12 @@ const RestaurantDetail = (restaurant) => `
 
 export const RestaurantDetailLikeButton = () => `
     <button aria-label="like this restaurant" id="likeButton" class="like">
-        <img src="/icons/like.svg"></img>
+        <img src="/icons/like.svg" alt="like icon" />
     </button>`;
 
 export const RestaurantDetailLikedButton = () => `
     <button aria-label="unlike this restaurant" id="likeButton" class="like">
-        <img src="/icons/liked.svg"></img>
+        <img src="/icons/liked.svg" alt="liked icon" />
     </button>`;
 
 export default RestaurantDetail;
