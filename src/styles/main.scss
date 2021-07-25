@@ -197,9 +197,15 @@ main {
     display: block;
     width: 100%;
     min-height: 400px;
-    background-image: url('/images/heros/hero-image_2.jpg');
+    background-image: url('/images/heros/hero-small.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include mQ($minMobile){
+      background-image: url('/images/heros/hero-large.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
     .hero__inner {
       position: absolute;
