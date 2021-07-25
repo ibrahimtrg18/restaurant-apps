@@ -1,21 +1,18 @@
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import RestaurantItem from '../templates/restaurant-item';
+import FavoriteRestaurantView from './favorited/favorite-view';
+import FavoriteRestaurantPresenter from './favorited/favorite-presenter';
+
+const view = new FavoriteRestaurantView();
 
 const Favorite = {
   async render() {
-    return `
-      <section class="content">
-        <h1 class="content__title">Favorite Restaurant</h1>
-        <div id="restaurants" class="content__restaurants"></div>
-      </section>`;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantIdb.getRestaurants();
-    const restaurantContainer = document.querySelector('#restaurants');
-
-    restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += RestaurantItem(restaurant);
+    new FavoriteRestaurantPresenter({
+      view,
+      favoriteRestaurants: FavoriteRestaurantIdb,
     });
   },
 };

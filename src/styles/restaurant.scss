@@ -16,6 +16,10 @@
     gap: 16px 16px;
   }
 
+  .restaurant-item__not__found{
+    grid-column: 1 / span 3;
+  }
+
   .restaurant-item {
     position: relative;
     width: 100%;
