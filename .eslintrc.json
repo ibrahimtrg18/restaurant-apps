@@ -18,9 +18,12 @@
         "endOfLine": "auto"
       }
     ],
+    "consistent-return":"off",
     "no-unused-vars": "warn",
     "no-underscore-dangle": "off",
+    "no-restricted-globals": "off",
     "import/no-extraneous-dependencies": "off",
-    "no-restricted-globals": "off"
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default-member": "off"
   }
 }
