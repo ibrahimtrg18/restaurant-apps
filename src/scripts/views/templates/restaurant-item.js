@@ -5,12 +5,16 @@ const RestaurantItem = (restaurant) => `
   <div class="restaurant-item">
     <div class="restaurant-item__head">
       <img
-        class="restaurant-item__image"
-        src="${RestaurantSource.getRestaurantImageByPictureId(
+        class="restaurant-item__image lazyload"
+        src="/images/placeholder.jpg"
+        data-src="
+        ${RestaurantSource.getRestaurantImageByPictureId(
           restaurant.pictureId,
           SIZE.SMALL,
         )}"
         alt="${restaurant.name} image"
+        width="200"
+        height="200"
       />
       <div class="restaurant-item__location">${restaurant.city}</div>
     </div>
