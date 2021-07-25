@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/restaurant.scss';
+import '../styles/font.scss';
 
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';

@@ -9,6 +9,7 @@ const Home = {
           <h1 class="hero-inner__title">Track Your Dinner Journey</h1>
           <p class="hero-inner__tagline">Let's try all food around the world</p>
         </div>
+        <img class="lazyload" src="/images/placeholder.jpg" data-src="/images/heros/hero.jpg" width="100%" height="400" />
       </div>
       <section class="content">
         <h1 class="content__title">Explore Restaurant</h1>

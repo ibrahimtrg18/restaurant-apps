@@ -13,7 +13,7 @@ const RestaurantItem = (restaurant) => `
           SIZE.SMALL,
         )}"
         alt="${restaurant.name} image"
-        width="200"
+        width="100%"
         height="200"
       />
       <div class="restaurant-item__location">${restaurant.city}</div>
