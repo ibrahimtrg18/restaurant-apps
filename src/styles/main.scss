@@ -174,7 +174,7 @@ header {
 .skip-link {
   background: $primaryColor;
   color: $whiteColor;
-  font-weight: 700;
+  font-weight: 600;
   top: -100%;
   left: 50%;
   padding: 4px;
@@ -201,7 +201,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include mQ($minMobile){
+    @include mQ($minMobile) {
       background-image: url('/images/heros/hero-large.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -232,7 +232,7 @@ main {
     }
     .content__title {
       display: block;
-      font-weight: 700;
+      font-weight: 600;
       text-align: center;
       margin-bottom: 16px;
     }
