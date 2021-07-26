@@ -1,20 +1,27 @@
 @import './variable.scss';
 @import './mixin.scss';
 
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-weight: 400;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+  color: $textColor;
 }
 
 body {
-  display: block;
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  font-weight: 400;
-  font-family: 'Nunito', sans-serif;
+  background-color: $bodyColor;
 }
 
 img {
@@ -33,51 +40,94 @@ a {
 }
 
 header {
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  width: 100%;
-  height: $navbarHeight;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  padding: 8px 16px;
 
-  .logo {
-    font-size: $logoFontSize;
-    font-weight: 800;
-    white-space: nowrap;
-  }
-
-  .hamburger {
+  .appbar {
     display: grid;
-    place-items: center;
-    height: 48px;
-    width: 48px;
-    cursor: pointer;
-    border: transparent;
-    background-color: transparent;
-    padding: 16px 10px;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0 16px;
 
-    span {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: $textColor;
+    .logo {
+      font-size: $logoFontSize;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
-    @include mQ($minMobile) {
-      display: none;
+    nav.navbar {
+      .menu {
+        display: none;
+
+        @include mQ($minMobile) {
+          display: block;
+        }
+
+        ul {
+          display: grid;
+          grid-template-columns: repeat(3, auto);
+          list-style: none;
+
+          li {
+            a {
+              font-size: $menuFontSizeMobile;
+              text-decoration: none;
+              color: $textColor;
+              font-weight: 600;
+              padding: 10px 8px;
+              white-space: nowrap;
+
+              &:hover {
+                color: $primaryColor;
+              }
+
+              @include mQ($minMobile) {
+                font-size: $menuFontSizeTablet;
+                padding: 10px 12px;
+              }
+              @include mQ($minTablet) {
+                font-size: $menuFontSizeDesktop;
+                padding: 10px 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .hamburger {
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border: transparent;
+        background-color: transparent;
+        padding: 16px 10px;
+
+        span {
+          display: block;
+          width: 20px;
+          height: 2px;
+          background-color: $textColor;
+        }
+
+        @include mQ($minMobile) {
+          display: none;
+        }
+      }
     }
   }
 
   nav.drawer {
     z-index: 100;
     position: fixed;
-    top: $navbarHeight;
+    top: 48px;
     bottom: 0;
     right: -100%;
     display: block;
@@ -121,49 +171,6 @@ header {
       }
     }
   }
-
-  nav.navbar {
-    display: none;
-
-    @include mQ($minMobile) {
-      display: block;
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-
-      li {
-        // display: inline-block;
-        // margin-left: 16px;
-        // padding: 0 16px;
-
-        a {
-          font-size: $menuFontSizeMobile;
-          text-decoration: none;
-          color: $textColor;
-          font-weight: 600;
-          padding: 10px 8px;
-          white-space: nowrap;
-
-          &:hover {
-            color: $primaryColor;
-          }
-
-          @include mQ($minMobile) {
-            font-size: $menuFontSizeTablet;
-            padding: 10px 12px;
-          }
-          @include mQ($minTablet) {
-            font-size: $menuFontSizeDesktop;
-            padding: 10px 16px;
-          }
-        }
-      }
-    }
-  }
 }
 
 .skip-link {
@@ -181,12 +188,10 @@ header {
 }
 
 #maincontent {
-  min-height: calc(100vh - 35px);
+  min-height: 95vh;
 }
 
 main {
-  padding-top: $navbarHeight;
-
   .hero {
     position: relative;
     display: flex;
@@ -210,7 +215,7 @@ main {
 
     img {
       width: 100%;
-      height: 400px;
+      height: 500px;
       object-fit: cover;
     }
   }
@@ -233,10 +238,11 @@ main {
 
 footer {
   display: block;
+  width: 100%;
   padding: 8px 16px;
   background-color: $whiteColor;
-  width: 100%;
   color: $grayColor;
   font-weight: 300;
   font-size: $smFont;
+  transition: all 0.1s;
 }
