@@ -194,7 +194,9 @@ header {
 }
 
 #maincontent {
-  min-height: 95vh;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 main {
